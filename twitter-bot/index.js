@@ -18,7 +18,7 @@ function readParams() {
 function getTweets(since_id) {
   return new Promise((resolve, reject) => {
     let params = {
-      q: "#entryleveldeveloper",
+      q: "#afrofunk",
       count: 10,
     };
     if (since_id) {
@@ -60,6 +60,7 @@ async function main() {
         console.log("Successful retweet " + tweet.id_str);
       } catch (e) {
         console.log("Unsuccessful retweet " + tweet.id_str);
+        console.log(e);
       }
       params.since_id = tweet.id_str;
     }
